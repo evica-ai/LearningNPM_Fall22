@@ -1,11 +1,11 @@
-body {
-    color: white;
-    background-color: black;
+// start with imports (order is important)
+@import "./modules/_reset.scss";
+@import "./modules/_vars.scss";
 
-    font-size: 16px;
+// import mobile styles first
+@import "./modules/_defaults.scss";
 
-    // more generic rules here
-}
+// component files next
 
 @import "./modules/_main.scss";
 @import "./modules/_header.scss";
