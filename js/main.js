@@ -1,6 +1,6 @@
 // import always go at the top of teh file
 // this is called an IIFE (immediately invoked function expression)
-import { person } from "./modules/data.js";
+import { getData} from "./modules/dataMiner.js";
 
 // its prettty common Javascript programming pattern
 // also called a module file
@@ -10,11 +10,15 @@ import { person } from "./modules/data.js";
 
     let theTeam = document.querySelector('#team-section'),
         theTemplate = document.querySelector('#bio-template').content;
-  
+    
+        // debugger;
 
-    function loadData() {
+    function buildTeam(data) {
+        // get all the keys (names) form the data object and use it to iterate through
+        debugger;
+        
         // get all key (names) from teh data object and use that to iterate through the data 
-        const people = Object.keys(person); //Object.keys creates an array
+        const people = Object.keys(data); //Object.keys creates an array
 
         people.forEach(prof => {
             // copy the template's contents
@@ -24,11 +28,11 @@ import { person } from "./modules/data.js";
             let containers = panel.firstElementChild.children;
 
             // grab the image from the object and set it as the source
-            containers[0].querySelector('img').src = `images/${person[prof].avatar}`;
+            containers[0].querySelector('img').src = `images/${data[prof].avatar}`;
 
-            containers[1].textContent = person[prof].name;
-            containers[2].textContent = person[prof].role;
-            containers[3].textContent = person[prof].nickname;
+            containers[1].textContent = data[prof].name;
+            containers[2].textContent = data[prof].role;
+            containers[3].textContent = data[prof].nickname;
 
             theTeam.appendChild(panel);
         })
@@ -36,12 +40,12 @@ import { person } from "./modules/data.js";
         // let theName = document.querySelector('.username'),
         //     theDesc = document.querySelector('.user-bio');
 
-        // // refer tot the object's keys (person) and use those values to update the app
-        // theName.textContent = person.name;
-        // theDesc.textContent = person.desc;
+        // // refer tot the object's keys (data) and use those values to update the app
+        // theName.textContent = data.name;
+        // theDesc.textContent = data.desc;
 
-        // person.sayHello();
+        // data.sayHello();
     }
 
-    loadData();
+    getData(buildTeam);
 })();

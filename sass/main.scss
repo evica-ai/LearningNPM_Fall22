@@ -6,10 +6,15 @@
 
 // import mobile style first
 @import "./modules/_default.scss";
+@import "./modules/_queries.scss";
 
 // componnet files next
 
 @import "./modules/_main.scss";
 @import "./modules/_header.scss";
 @import "./modules/_footer.scss";
+
+// atmoic files go here
+@import "./modules/_biopanel.scss";
+
 
