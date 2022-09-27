@@ -1,12 +1,15 @@
-// start with imports (order is important)
+// start with imports (order is important) 
+// reset file always first, variables second
 @import "./modules/_reset.scss";
 @import "./modules/_vars.scss";
 
-// import mobile styles first
-@import "./modules/_defaults.scss";
 
-// component files next
+// import mobile style first
+@import "./modules/_default.scss";
+
+// componnet files next
 
 @import "./modules/_main.scss";
 @import "./modules/_header.scss";
 @import "./modules/_footer.scss";
+
