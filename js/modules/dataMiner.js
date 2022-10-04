@@ -1,9 +1,9 @@
 // create a funtcion to export
-function getData(callback) {
+function getData(targetURL, callback) {
     console.log('its aliiiiiive!');
 
     // use the Fetch API to go and get out data
-    fetch(`./data.json`) //go retrieve the data from this file or resource
+    fetch(targetURL) //go retrieve the data from this file or resource
         // parse the JSON object -> turn it into a plain JS object
         .then(res => res.json()) //res means 'response' -> the data we retreived
         // res.json() is a built-in method or function that turns the JSON into a plain object
