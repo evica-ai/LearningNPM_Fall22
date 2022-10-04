@@ -17,11 +17,11 @@
         "nickname":"Teddy Bear",
         "avatar":"joe.jpg"
     },
-    "Pan": {
-        "name":"Pan",
-        "role":"Code Ninja",
-        "nickname":"Spider Pan",
-        "avatar":"pan.jpg"
+    "Jarrod": {
+        "name":"Jarrod",
+        "role":"Design Ninja",
+        "nickname":"Zoolander",
+        "avatar":"jarrod.jpg"
     },
     "Trevor": {
         "name":"Trevor",
@@ -29,4 +29,4 @@
         "nickname":"T Dazzle",
         "avatar":"trevor.jpg"
     }
-  }
+  } 
