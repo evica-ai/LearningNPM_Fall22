@@ -1,24 +1,22 @@
-// import always go at the top of teh file
+// imports always go at the top of the file
 // this is called an IIFE (immediately invoked function expression)
-import { getData} from "./modules/dataMiner.js";
+import { getData } from "./modules/dataMiner.js";
 
-// its prettty common Javascript programming pattern
+// it's a pretty common JavaScript programming pattern
 // also called a module file
-// wrapped around brackets encloses the command in its own private module
 (() => {
-    console.log('fired');
+    console.log('fired!');
 
     let theTeam = document.querySelector('#team-section'),
         theTemplate = document.querySelector('#bio-template').content;
-    
+
         // debugger;
 
     function buildTeam(data) {
-        // get all the keys (names) form the data object and use it to iterate through
+        // get all the keys (names) from the data object and use that to iterate through the data
         debugger;
         
-        // get all key (names) from teh data object and use that to iterate through the data 
-        const people = Object.keys(data); //Object.keys creates an array
+        const people = Object.keys(data); // Object.keys creates an array
 
         people.forEach(prof => {
             // copy the template's contents
@@ -27,7 +25,7 @@ import { getData} from "./modules/dataMiner.js";
             // get a reference to the template's elements
             let containers = panel.firstElementChild.children;
 
-            // grab the image from the object and set it as the source
+            // grab the image from the object and set it as the source 
             containers[0].querySelector('img').src = `images/${data[prof].avatar}`;
 
             containers[1].textContent = data[prof].name;
@@ -36,7 +34,10 @@ import { getData} from "./modules/dataMiner.js";
 
             theTeam.appendChild(panel);
         })
+    }
 
+    getData(buildTeam);
+})();
         // let theName = document.querySelector('.username'),
         //     theDesc = document.querySelector('.user-bio');
 
@@ -45,7 +46,3 @@ import { getData} from "./modules/dataMiner.js";
         // theDesc.textContent = data.desc;
 
         // data.sayHello();
-    }
-
-    getData(buildTeam);
-})();
